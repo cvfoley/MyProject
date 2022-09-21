@@ -15,15 +15,14 @@ class Dice:
     # create the __str__ method
     # it returns "Last roll: value" where value is the last value in the list that tracks the rolls
     def __str__(self):
-        return f"Last roll: {self.roll_list[0]}"
+        return f"Last roll: {self.roll_list[-1]}"
 
 
     # create the roll method
     # it randomly picks a value from 1 to the number of sides this dice object has
     # it adds that value to the end of the list that tracks all the rolls
     # it returns the value
-    def roll(self, roll_list):
-        import random
+    def roll(self):
         num = random.randint(1, self.sides)
         self.roll_list.append(num)
         return num
