@@ -7,16 +7,26 @@ class Dice:
     # it takes as input the number sides and if none is specified use 6
     # it sets the dice object's number of sides (instance variable)
     # it sets the list that tracks the rolls to the empty list (instance variable)
+    def __init__(self, sides = 6):
+        self.sides = sides
+        self.roll_list = []
 
 
     # create the __str__ method
     # it returns "Last roll: value" where value is the last value in the list that tracks the rolls
+    def __str__(self):
+        return f"Last roll: {self.roll_list[0]}"
 
 
     # create the roll method
     # it randomly picks a value from 1 to the number of sides this dice object has
     # it adds that value to the end of the list that tracks all the rolls
     # it returns the value
+    def roll(self, roll_list):
+        import random
+        num = random.randint(1, self.sides)
+        self.roll_list.append(num)
+        return num
 
 
     # BONUS
@@ -54,5 +64,6 @@ def main():
     # Print accumulation
     #six_sided.print_count_for_num(3)
 
-if __name__ == "__main__":
-    main()
+main()
+#if __name__ == "__main__":
+  #
